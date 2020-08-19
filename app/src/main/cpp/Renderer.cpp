@@ -1015,6 +1015,15 @@ void Renderer::createGraphicsPipeline() {
             .topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP,
             .primitiveRestartEnable = VK_FALSE,
     };
+    const VkPipelineViewportStateCreateInfo viewportInfo = {
+            .sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO,
+            .pNext = nullptr,
+            .flags = 0,
+            .viewportCount = 1,
+            .pViewports = nullptr,
+            .scissorCount = 1,
+            .pScissors = nullptr,
+    };
     const VkPipelineRasterizationStateCreateInfo rasterInfo = {
             .sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO,
             .pNext = nullptr,
@@ -1083,7 +1092,7 @@ void Renderer::createGraphicsPipeline() {
             .pVertexInputState = &vertexInputInfo,
             .pInputAssemblyState = &inputAssemblyInfo,
             .pTessellationState = nullptr,
-            .pViewportState = nullptr,
+            .pViewportState = &viewportInfo,
             .pRasterizationState = &rasterInfo,
             .pMultisampleState = &multisampleInfo,
             .pDepthStencilState = nullptr,
