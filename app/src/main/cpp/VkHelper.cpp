@@ -95,7 +95,6 @@ void VkHelper::initializeDeviceApi(VkDevice device) {
     GET_DEV_PROC(DeviceWaitIdle);
     GET_DEV_PROC(EndCommandBuffer);
     GET_DEV_PROC(FreeCommandBuffers);
-    GET_DEV_PROC(FreeDescriptorSets);
     GET_DEV_PROC(FreeMemory);
     GET_DEV_PROC(GetBufferMemoryRequirements);
     GET_DEV_PROC(GetDeviceQueue);
