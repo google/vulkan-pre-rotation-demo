@@ -98,7 +98,6 @@ public:
     PFN_vkDeviceWaitIdle DeviceWaitIdle = nullptr;
     PFN_vkEndCommandBuffer EndCommandBuffer = nullptr;
     PFN_vkFreeCommandBuffers FreeCommandBuffers = nullptr;
-    PFN_vkFreeDescriptorSets FreeDescriptorSets = nullptr;
     PFN_vkFreeMemory FreeMemory = nullptr;
     PFN_vkGetBufferMemoryRequirements GetBufferMemoryRequirements = nullptr;
     PFN_vkGetDeviceQueue GetDeviceQueue = nullptr;

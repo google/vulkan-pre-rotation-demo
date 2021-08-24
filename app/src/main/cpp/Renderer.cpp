@@ -182,7 +182,6 @@ void Renderer::destroy() {
         mRenderPass = VK_NULL_HANDLE;
 
         // Destroy descriptor sets
-        mVk.FreeDescriptorSets(mDevice, mDescriptorPool, 1, &mDescriptorSet);
         mVk.DestroyDescriptorPool(mDevice, mDescriptorPool, nullptr);
         mVk.DestroyDescriptorSetLayout(mDevice, mDescriptorSetLayout, nullptr);
 
@@ -831,6 +830,7 @@ void Renderer::createDescriptorSet() {
     const VkDescriptorPoolCreateInfo descriptor_pool = {
             .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO,
             .pNext = nullptr,
+            .flags = 0,
             .maxSets = 1,
             .poolSizeCount = 1,
             .pPoolSizes = &descriptorPoolSize,
